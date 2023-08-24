@@ -57,6 +57,20 @@ input AddressWhereUniqueInput {
   id: String!
 }
 
+"""GraphQL representation of BigInt"""
+scalar BigInt
+
+input BigIntNullableFilter {
+  equals: BigInt
+  gt: BigInt
+  gte: BigInt
+  in: [BigInt!]
+  lt: BigInt
+  lte: BigInt
+  not: BigInt
+  notIn: [BigInt!]
+}
+
 input Credentials {
   password: String!
   username: String!
@@ -138,6 +152,17 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 """
 scalar DateTime
 
+input DecimalNullableFilter {
+  equals: Float
+  gt: Float
+  gte: Float
+  in: [Float!]
+  lt: Float
+  lte: Float
+  not: Float
+  notIn: [Float!]
+}
+
 input FloatNullableFilter {
   equals: Float
   gt: Float
@@ -194,7 +219,7 @@ type Order {
   discount: Float
   id: String!
   product: Product
-  quantity: Float
+  quantity: BigInt
   totalPrice: Float
   updatedAt: DateTime!
 }
@@ -203,7 +228,7 @@ input OrderCreateInput {
   customer: CustomerWhereUniqueInput
   discount: Float
   product: ProductWhereUniqueInput
-  quantity: Float
+  quantity: BigInt
   totalPrice: Float
 }
 
@@ -236,7 +261,7 @@ input OrderUpdateInput {
   customer: CustomerWhereUniqueInput
   discount: Float
   product: ProductWhereUniqueInput
-  quantity: Float
+  quantity: BigInt
   totalPrice: Float
 }
 
@@ -257,7 +282,7 @@ input OrderWhereInput {
   discount: FloatNullableFilter
   id: StringFilter
   product: ProductWhereUniqueInput
-  quantity: IntNullableFilter
+  quantity: BigIntNullableFilter
   totalPrice: IntNullableFilter
 }
 
@@ -301,7 +326,7 @@ input ProductUpdateInput {
 input ProductWhereInput {
   description: StringNullableFilter
   id: StringFilter
-  itemPrice: FloatNullableFilter
+  itemPrice: DecimalNullableFilter
   name: StringNullableFilter
   orders: OrderListRelationFilter
 }
