@@ -23,7 +23,7 @@ const CREATE_INPUT = {
   createdAt: new Date(),
   updatedAt: new Date(),
   name: "exampleName",
-  itemPrice: 42.42,
+  itemPrice: 42.424242424,
   description: "exampleDescription",
 };
 const CREATE_RESULT = {
@@ -31,7 +31,7 @@ const CREATE_RESULT = {
   createdAt: new Date(),
   updatedAt: new Date(),
   name: "exampleName",
-  itemPrice: 42.42,
+  itemPrice: 42.424242424,
   description: "exampleDescription",
 };
 const FIND_MANY_RESULT = [
@@ -40,7 +40,7 @@ const FIND_MANY_RESULT = [
     createdAt: new Date(),
     updatedAt: new Date(),
     name: "exampleName",
-    itemPrice: 42.42,
+    itemPrice: 42.424242424,
     description: "exampleDescription",
   },
 ];
@@ -49,7 +49,7 @@ const FIND_ONE_RESULT = {
   createdAt: new Date(),
   updatedAt: new Date(),
   name: "exampleName",
-  itemPrice: 42.42,
+  itemPrice: 42.424242424,
   description: "exampleDescription",
 };
 

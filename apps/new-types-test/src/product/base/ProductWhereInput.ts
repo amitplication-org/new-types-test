@@ -15,7 +15,7 @@ import { StringFilter } from "../../util/StringFilter";
 import { Type } from "class-transformer";
 import { IsOptional, ValidateNested } from "class-validator";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
-import { FloatNullableFilter } from "../../util/FloatNullableFilter";
+import { DecimalNullableFilter } from "../../util/DecimalNullableFilter";
 import { OrderListRelationFilter } from "../../order/base/OrderListRelationFilter";
 
 @InputType()
@@ -44,14 +44,14 @@ class ProductWhereInput {
 
   @ApiProperty({
     required: false,
-    type: FloatNullableFilter,
+    type: DecimalNullableFilter,
   })
-  @Type(() => FloatNullableFilter)
+  @Type(() => DecimalNullableFilter)
   @IsOptional()
-  @Field(() => FloatNullableFilter, {
+  @Field(() => DecimalNullableFilter, {
     nullable: true,
   })
-  itemPrice?: FloatNullableFilter;
+  itemPrice?: DecimalNullableFilter;
 
   @ApiProperty({
     required: false,
