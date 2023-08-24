@@ -1,3 +1,4 @@
+import { Decimal } from "decimal.js";
 import { Order } from "../order/Order";
 
 export type Product = {
@@ -5,7 +6,7 @@ export type Product = {
   createdAt: Date;
   updatedAt: Date;
   name: string | null;
-  itemPrice: number | null;
+  itemPrice: Decimal | null;
   description: string | null;
   orders?: Array<Order>;
 };

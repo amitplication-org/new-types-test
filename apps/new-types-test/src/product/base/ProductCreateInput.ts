@@ -9,7 +9,7 @@ https://docs.amplication.com/how-to/custom-code
 
 ------------------------------------------------------------------------------
   */
-import { InputType, Field } from "@nestjs/graphql";
+import { InputType, Field, Float } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import {
   IsString,
@@ -17,6 +17,7 @@ import {
   IsNumber,
   ValidateNested,
 } from "class-validator";
+import { Decimal } from "decimal.js";
 import { OrderCreateNestedManyWithoutProductsInput } from "./OrderCreateNestedManyWithoutProductsInput";
 import { Type } from "class-transformer";
 
@@ -39,10 +40,10 @@ class ProductCreateInput {
   })
   @IsNumber()
   @IsOptional()
-  @Field(() => Number, {
+  @Field(() => Float, {
     nullable: true,
   })
-  itemPrice?: number | null;
+  itemPrice?: Decimal | null;
 
   @ApiProperty({
     required: false,
